@@ -1,4 +1,4 @@
-/// Phase: B | Athenos AI Library
+/// Phase: C | Athenos AI Library
 /// Re-export main modules for external use
 
 pub mod types;
@@ -17,4 +17,14 @@ pub mod rag;
 pub mod replay;
 pub mod federated;
 pub mod cohort;
+pub mod auto_action;
+pub mod microlearning;
+pub mod scheduling;
+pub mod reflection;
+pub mod emotional_copilot;
+pub mod victory;
+pub mod security;
+pub mod analytics;
+pub mod plugin;
+pub mod beta;
 
