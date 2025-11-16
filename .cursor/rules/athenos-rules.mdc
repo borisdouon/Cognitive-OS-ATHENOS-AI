@@ -1,0 +1,71 @@
+# === ATHENOS AI — GLOBAL CURSOR RULES ===
+# Enforce sovereignty, privacy, and phased discipline
+
+# ——— 1. CORE DISCIPLINE ———
+- Always use TDD: Write **unit + integration tests BEFORE** any implementation
+- Never implement a feature without a passing test
+- Run `cargo test` after every change and show results
+- All functions must log: `tracing::info!("{}: {:?}", fn_name, args)` + error handling
+
+# ——— 2. PRIVACY & DATA SOVEREIGNTY ———
+- **Never** send any user data to cloud without explicit, granular consent
+- Default: 100% on-device processing (SQLite, local embeddings, local LLM inference)
+- Cloud sync only via `opt_in_cloud_sync: bool` in `ConsentLedger`
+- Encrypt all local data with `sodiumoxide` or `ring`
+- Provide one-click data deletion UI
+
+# ——— 3. PHASED EXECUTION (NO PHASE SKIPPING) ———
+- **Phase A only** until user says: “Proceed to Phase B”
+- **Phase B only** after Phase A is 100% tested and committed
+- **Phase C+** blocked until prior phases are verified
+- Current phase must be stated in every agent response: `// CURRENT PHASE: A`
+
+# ——— 4. SCOPE CONTROL ———
+- **No UI** beyond:
+  - Consent screen
+  - Daily Cognitive Report Dashboard (Recharts: focus, time saved, pattern graph)
+  - Action approval console (1-click approve/undo)
+- No dark mode, animations, themes, or mobile views
+- No frontend framework except React + Tailwind (Tauri)
+
+# ——— 5. DOCUMENTATION & TRACEABILITY ———
+- Always cite exact line numbers from:
+  - `Athenos_AI_Strategy.md`
+  - `Strategic_Reinforcements_Gap_Closures.md`
+  - `TRAINING CONCEPT.txt`
+- Use `@Athenos_AI_Strategy.md#Phase-A-Step-3` syntax in comments
+- Every generated file must include:
+  ```rust
+  /// Phase: A | Step: 4 | Source: Athenos_AI_Strategy.md#L72
+——— 6. TECH STACK LOCK ———
+
+Backend: Rust + Tauri
+DB: rusqlite (local), vecs (vector embeddings)
+AI: candle (local inference), DistilBERT fine-tuned on athenos_data.jsonl
+No Python, no Node.js backend
+No external APIs except opt-in federated learning
+
+——— 7. TESTING & SANDBOX ———
+
+Every automation must run in sandbox before suggestion
+Use std::process::Command in isolated dir or Docker stub
+Provide undo() function with full diff log
+Simulate 3 user profiles in tests: Developer, Accountant, Designer
+
+——— 8. AGENT BEHAVIOR ———
+
+Never suggest features outside current phase
+Never add dependencies without approval
+If unsure, ask: “Should I implement X? (Phase Y)”
+End every response with:textPhase [X] complete. Tests: PASS. Ready for next?
+
+——— 9. DELIGHT & METRICS ———
+
+Show quantified wins in report: +11 min saved, Focus +22%
+Use CognitiveClarityIndex, EmotionalResilienceScore from docs
+Log to metrics/ for alpha cohort
+
+——— 10. FINAL GUARDRAIL ———
+
+If any rule is violated, stop and alert:VIOLATION: [Rule #X]. Reverting changes.
+---

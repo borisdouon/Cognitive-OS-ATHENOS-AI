@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "npx",
+      "args": [
+        "shadcn@latest",
+        "mcp"
+      ]
+    },
+    "docker-mcp-gateway": {
+     "command": "docker",
+     "args": [
+       "mcp",
+       "gateway",
+       "run"
+     ],
+     "type": "stdio"
+   },
+    "github": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server:0.20.2",
+        "stdio",
+        "--dynamic-toolsets"
+      ]
+    },
+    "mcp-compass": {
+      "command": "npx",
+      "args": [
+         "-y",
+         "@liuyoshio/mcp-compass"
+      ]
+   }
+}
+}
