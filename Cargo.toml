@@ -29,6 +29,9 @@ hamming = "0.1"
 # OS Events (Windows)
 windows = { version = "0.52", features = ["Win32_System_Threading", "Win32_Foundation", "Win32_UI_WindowsAndMessaging"] }
 
+# Random number generation (for RL)
+rand = "0.8"
+
 # Testing
 [dev-dependencies]
 mockall = "0.12"

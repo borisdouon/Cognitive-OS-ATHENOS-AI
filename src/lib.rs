@@ -1,4 +1,4 @@
-/// Phase: C | Athenos AI Library
+/// Phase: D | Athenos AI Library
 /// Re-export main modules for external use
 
 pub mod types;
@@ -27,4 +27,14 @@ pub mod security;
 pub mod analytics;
 pub mod plugin;
 pub mod beta;
+pub mod rl_policy;
+pub mod rag_expanded;
+pub mod cognitive_twins;
+pub mod marketplace;
+pub mod enterprise;
+pub mod compliance;
+pub mod multi_region;
+pub mod knowledge_loop;
+pub mod api;
+pub mod launch;
 
